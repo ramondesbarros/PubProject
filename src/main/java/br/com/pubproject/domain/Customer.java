@@ -32,14 +32,17 @@ public class Customer implements Serializable {
 
     @NotEmpty
     @Size(min = 11, max = 11)
-
     private String cpf;
+
     @NotEmpty
-    @Size(min = 10, max = 11)
+    @Size(min = 9, max = 12)
     private String phone;
 
     @Email
     private String email;
+
+    // @Column(name = "person_image", nullable = false, columnDefinition = "mediumblob")
+    // private byte[] image;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "customer")
     private Command command;

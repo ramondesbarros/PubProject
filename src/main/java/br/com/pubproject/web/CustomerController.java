@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.pubproject.domain.Customer;
+import br.com.pubproject.domain.CustomerRedis;
 import br.com.pubproject.service.CustomerService;
 
 @RestController
@@ -28,8 +29,8 @@ public class CustomerController {
     private CustomerService customerService;
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void create(@RequestBody Customer customer) {
-        customerService.createCar(customer);
+    public void create(@RequestBody String cpf) throws Exception {
+        customerService.createCustomer(cpf);
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
@@ -51,4 +52,10 @@ public class CustomerController {
     public void readCustomerByCpf(@PathVariable String cpf) {
         customerService.readCustomerByCpf(cpf);
     }
+
+    @PostMapping(value = "/redis/customer", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void createCustomerRedis(@RequestBody CustomerRedis customerRedis) throws Exception {
+        customerService.createCustomerRedis(customerRedis);
+    }
+
 }

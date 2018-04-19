@@ -33,12 +33,12 @@ public class CustomerController {
         customerService.createCustomer(cpf);
     }
 
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/list", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Customer>> read() {
         return new ResponseEntity<List<Customer>>(customerService.listAllCustomer(), HttpStatus.OK);
     }
 
-    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(value = "/update", consumes = MediaType.APPLICATION_JSON_VALUE)
     public void update(@RequestBody Customer customer) {
         customerService.updateCustomer(customer);
     }

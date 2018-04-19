@@ -10,7 +10,6 @@ br/com/pubproject/domain/Type.class
 br/com/pubproject/domain/Product.class
 br/com/pubproject/service/CustomerService.class
 br/com/pubproject/integration/ProductRepository.class
-br/com/pubproject/web/config/SpringWebSecurityInitializer.class
 br/com/pubproject/service/impl/CommandServiceImpl.class
 br/com/pubproject/integration/CommandRepository.class
 br/com/pubproject/domain/NameProduct.class

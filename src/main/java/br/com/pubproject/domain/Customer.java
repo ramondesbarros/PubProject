@@ -16,6 +16,10 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Entity
 @Table(name = "customer")
 public class Customer implements Serializable {
@@ -44,6 +48,7 @@ public class Customer implements Serializable {
     // @Column(name = "person_image", nullable = false, columnDefinition = "mediumblob")
     // private byte[] image;
 
+    @JsonIgnore
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "customer")
     private Command command;
 

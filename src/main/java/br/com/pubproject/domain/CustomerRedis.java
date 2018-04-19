@@ -1,10 +1,14 @@
 package br.com.pubproject.domain;
 
+import java.io.Serializable;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 
 @RedisHash("customerRedis")
-public class CustomerRedis {
+public class CustomerRedis implements Serializable {
+
+    private static final long serialVersionUID = 1350585382272585743L;
 
     @Id
     private String cpf;
@@ -12,6 +16,19 @@ public class CustomerRedis {
     private String name;
     private String phone;
     private String email;
+
+    public CustomerRedis() {
+
+    }
+
+    public CustomerRedis(String cpf, String name, String phone, String email) {
+        super();
+        this.cpf = cpf;
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+    }
+
     // private byte[] image;
 
     public String getCpf() {

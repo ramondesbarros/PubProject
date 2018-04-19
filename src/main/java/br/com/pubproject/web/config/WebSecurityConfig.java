@@ -21,10 +21,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        http.authorizeRequests().antMatchers("/hello").access("hasRole('ROLE_ADMIN')").anyRequest().permitAll().and()
-                .formLogin().loginPage("/login").usernameParameter("username").passwordParameter("password").and()
-                .logout().logoutSuccessUrl("/login?logout").and().exceptionHandling().accessDeniedPage("/403").and()
-                .csrf();
+     // @formatter:off
+        http.authorizeRequests()
+                .antMatchers("/hello").hasRole("ADMIN")
+                .antMatchers("/customer**", "/command**").hasRole("ADMIN").anyRequest().authenticated().and()
+                .formLogin().loginPage("/login").permitAll().usernameParameter("username").passwordParameter("password")
+                .and().logout().logoutSuccessUrl("/login?logout").and().exceptionHandling().accessDeniedPage("/403")
+                .and().csrf();
+     // @formatter:on    
     }
 
     @Override

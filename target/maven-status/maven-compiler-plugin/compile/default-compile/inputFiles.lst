@@ -10,7 +10,6 @@
 /home/ramondesbarros/projects/java/eclipse/PubProject/src/main/java/br/com/pubproject/integration/ItemsRepository.java
 /home/ramondesbarros/projects/java/eclipse/PubProject/src/main/java/br/com/pubproject/integration/CommandRepository.java
 /home/ramondesbarros/projects/java/eclipse/PubProject/src/main/java/br/com/pubproject/web/CommandController.java
-/home/ramondesbarros/projects/java/eclipse/PubProject/src/main/java/br/com/pubproject/web/config/SpringWebSecurityInitializer.java
 /home/ramondesbarros/projects/java/eclipse/PubProject/src/main/java/br/com/pubproject/domain/NameProduct.java
 /home/ramondesbarros/projects/java/eclipse/PubProject/src/main/java/br/com/pubproject/integration/ProductRepository.java
 /home/ramondesbarros/projects/java/eclipse/PubProject/src/main/java/br/com/pubproject/service/impl/validate/CustomerServiceImplValidate.java
